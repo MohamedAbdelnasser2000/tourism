@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GoVistour" name="keywords">
+    <meta name="author" content="Mohamed Krsoon">
+    <meta content="موقع لتنظيم الرحلات السياحية والحجز في افخم وافضل الفنادق في مصر " name="description">
+
+    <title>GoVistour</title>
+
+    <link href="~/Content/Image/tttttt22222222.ico" rel="icon"  >
+
+    @*<link rel=“icon” herf="~/Content/Image/imaEge.png ">*@
+
+    <link href="~/Content/assets/css/style-starter.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark stroke ">
+                <h1>
+                    <a class="navbar-brand" href="@Url.Action( "Index", "Home")" style="color:blue">
+                        Go<span @*class="sub-log"*@ style="color:red">Vistour   </span>
+                    </a>
+                </h1>
+
+                <h style="opacity:0%"> __ </h>
+
+
+
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+
+                    @using (Html.BeginForm("Index", "Hotels"))
+                    {
+                        <input type="text" class="col-form-label-lg" name="SearchString" placeholder="ادخل اسم الفندق " style="border-radius: 10px; margin-right: 0px; border-color: black; text-align: right; background-color: white; opacity: 40%; margin-left: 20px" />
+                        <button type="submit" class="btn-info" style="border-radius: 10px; border-color: black; margin-left: 0px; margin-right:50px"> <span>    بحث    </span> <span class="fa fa-search search__icon"></span>  </button>
+
+                    }
+
+
+
+
+
+
+                <ul class="navbar-nav mr-auto ">
+
+
+
+                    <li class="nav-link ">
+                        <a href="@Url.Action( "Create", "Contacts")" class=" nav-link"> <span><b>تواصل معنا</b></span> <span class="fa fa-phone"></span> </a>
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-link">
+                            <a href="@Url.Action("Contact", "Home")" class=" nav-link"><span><b>معالم مصر السياحية</b></span> <span class="fa fa-eye"></span></a>
+                        </li>
+                    }
+                        <li class="nav-link ">
+                            <a href="@Url.Action( "Index", "Hotels")" class=" nav-link"><span><b>   اختر إقامتك  </b></span><span class="fa fa-bed"></span>  </a>
+                        </li>
+
+
+                        @*<li class="nav-link ">
+                <a href="@Url.Action( "Index", "Home")" class=" nav-link"><span><b>     الصفحة الرئيسية   </b></span><span class="fa fa-home"></span> </a>
+            </li>*@
+
+
+                        @*<li class="nav-link ">
+                <a href="@Url.Action( "Our_Partners", "Services")" class=" nav-link"> <b> شركائنا</b> </a>
+            </li>
+            <li class="nav-link ">
+                <a href="@Url.Action( "Our_Previous_Work", "Services")" class=" nav-link"> <b> سابقة اعمالنا</b> </a>
+            </li>*@
+
+                    </ul>
+
+
+
+
+                    @Html.Partial("_LoginPartial")
+
+
+                </div>
+                <!-- toggle switch for light and dark theme -->
+                @*<div class="mobile-position">
+            <nav class="navigation">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div class="mode-container py-1">
+                            <i class="gg-sun"></i>
+                            <i class="gg-moon"></i>
+                        </div>
+                    </label>
+                </div>
+            </nav>
+        </div>*@
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--/header-->
+    @RenderBody()
+    <!-- //End top header -->
+    <!-- footer -->
+    <section class="w3l-footer-29-main">
+        <div class="footer-29 py-5" style="text-align: center">
+            <div class="container py-lg-4" style="text-align: center;">
+                <div class="row footer-top-29" style="text-align: center">
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
+                        <div class="footer-logo mb-4">
+                            <h1 style="font-style: normal; font-size: 30px;font:bolder  ">
+                                <a class="navbar-brand" href="@Url.Action( "Index", "Home")" style="color:blue">
+                                    Go<span class="sub-log" style="color:red">Vistour   </span>
+                                </a>
+                            </h1>
+
+                            @*<h1 class="" style="font-style: normal; font-size: 30px;font:bolder ;color:red ">الحوكمة للاستشارات والتدريب</h1>*@
+                        </div>
+                        <br />
+                        <p>نحن مبدعون. أفضل موقع لحجز الفنادق وتذاكر الطيران وتنظيم الرحلات الترفيهية. حقق أقصى استفادة ممكنة من توفير وقتك ومالك والاستمتاع بافضل المعالم السايحة لدينا</p>
+                        <br />
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5" style="text-align: center">
+                        <h6 class="footer-title-29">معلومات الاتصال </h6>
+
+                        <p class="mt-2">Phone : <a href="tel:+1(21) 234 4567">+201145180590</a></p>
+                        <p class="mt-2">Phone 2 : <a href="tel:+1(21) 234 4567">+201090606857</a></p>
+
+                        <p class="mt-2">Email : <a href="">ceo@gov-egy.com</a></p>
+                        <p class="mt-2">Support : <a href="">info@gov-egy.com</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
+
+                        <div class="" style=" text-align:center">
+
+                            <a class="" href="https://api.whatsapp.com/send/?phone=201145180590&text&app_absent=0" style="color:white;font-size:large"><span>  <img src="~/Content/whatsappLogo.png" width="50" height="50" /></span>  </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <section class="w3l-copyright text-center">
+            <div class="container">
+                <p class="copy-footer-29">&copy; @DateTime.Now.Year .Design by:Mohamed Krsoon<br />contact us: mnkq2000@gmail.com</p>
+
+            </div>
+
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                &#10548;
+            </button>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
+
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
+        </section>
+        <!-- //copyright -->
+    </section>
+    <!-- //footer -->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="~/Content/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+
+    <script src="~/Content/assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+    <script src="~/Content/assets/js/owl.carousel.js"></script>
+    <!-- script for banner slider-->
+    <script>
+        $(document).ready(function () {
+            $('.owl-one').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        nav: false
+                    },
+                    667: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //script -->
+    <!-- magnific popup -->
+    <script src="~/Content/assets/js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
+        });
+    </script>
+    <!-- //magnific popup -->
+    <!-- /counter-->
+    <script src="~/Content/assets/js/counter.js"></script>
+    <!-- //counter-->
+    <!-- script for tesimonials carousel slider -->
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo1").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 2,
+                        nav: false,
+                        loop: true
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //script for tesimonials carousel slider -->
+    <!--/MENU-JS-->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!--//MENU-JS-->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!--bootstrap-->
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+   <script>
+
+       Swal.fire(
+           'Good job!',
+           'You clicked the button!',
+           'success'
+       )
+
+   </script>
+   
+</body>
+</html>

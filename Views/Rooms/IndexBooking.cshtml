@@ -1,0 +1,107 @@
+﻿@model IEnumerable<tourism.Models.Room>
+
+@{
+    ViewBag.Title = "IndexBooking";
+}
+
+<h2>IndexBooking</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Description)
+        </th>
+  
+        <th>
+            @Html.DisplayNameFor(model => model.Number_Of_Beds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Breadth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Passport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Any_Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hotel.H_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Description)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_Of_Beds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Breadth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Any_Question)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hotel.H_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.r_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.r_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.r_Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,134 @@
+﻿@model tourism.Models.Contact
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!-- contact1 -->
+<div style="background-image: url('../../Content/Image/For_Reser/pexels-roberto-hund-5356219.jpg'); background-size: cover; background-repeat: no-repeat ">
+
+    <br />
+    <br />
+    <br />
+    <section class="w3l-contact-1 py-5" id="contact">
+
+
+        <div class="contacts-9 py-lg-5 py-md-4">
+            <div class="container">
+                <div class="d-grid contact-view mb-5 pb-lg-5">
+                    <div class="cont-details" style=" border: 1px outset #0c49e4; border-radius: 20px;padding:15px;width: auto; height: auto; background-color: #afafafc2;text-align:center">
+                        <div class="contactct-fm-text text-left mb-md-5 mb-4">
+                            <div class="header-title mb-md-5 mt-4">
+
+                                <h3 class="hny-title text-center">للتواصل معنا </h3>
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="cont-top">
+                            <div class="cont-right text-center">
+                                <span class="fa fa-phone"></span>
+                            </div>
+                            <div class="cont-left">
+                                <h6>Phone number</h6>
+                                <p><a href="tel:+201145180590">+201145180590</a></p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="cont-top ">
+                            <div class="cont-right text-center">
+                                <span class="fa fa-envelope-o"></span>
+                            </div>
+                            <div class="cont-left">
+                                <h6>Send Email</h6>
+                                <p><a href="mailto:digitaledu@mail.com" class="mail">Digitaledu@mail.com</a></p>
+                            </div>
+                        </div>
+                        <hr />
+                        
+
+                        @*<div class="cont-top margin-up text-center">
+                                <h6>طرق الدفع</h6>
+                                <img src="~/Content/booking/images/WhatsApp Image 2022-09-12 at 4.47.48 AM.jpeg" width="450" height="400" />
+
+                            </div>*@
+                    </div>
+                    <div class="map-content-9" style=" border: 1px outset #0c49e4; border-radius: 20px;padding:15px;width: auto; height: auto; background-color: #afafafc2;text-align:center">
+                        <div class="contactct-fm map-content-9 pl-lg-4">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <div class="header-title mb-md-5 mt-4">
+
+                                    <h3 class="hny-title text-center">للتواصل معنا </h3>
+                                </div>
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <h4 style="text-align: center; color: white">الاسم</h4>
+                                    <div class="">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <h4 style="text-align: center; color: white">البريد الالكتروني</h4>
+                                    <div class="">
+                                        @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <h4 style="text-align: center; color: white">رقم التليفون</h4>
+                                    <div class="">
+                                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <h4 style="text-align: center; color: white">الاستفسار</h4>
+                                    <div class="">
+                                        @Html.TextAreaFor(model => model.Description, 10, 40, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group  text-center">
+                                    <div class="col-md-offset-2  text-center">
+                                        <input type="submit" value="إرسال الحجز" class="btn btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            }
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>
+
+<!-- /contact1 -->
+
+
+
+
+
+
+
+
+
+

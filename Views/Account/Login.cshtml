@@ -1,0 +1,110 @@
+﻿@using tourism.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+
+}
+
+
+<head>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+</head>
+
+
+<div class="video-w3l" style="background-image: url('../../Content/Image/1.jpg');  " >
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="sub-main-w3">
+
+        <form action="" method="post" class="text-xl-center" >
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-style-agile">
+                    <label style="font-size:40px">
+                        تسجيل الدخول
+                    </label>
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        اسم المستخدم او البريد الالكتروني
+                    </label>
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        كلمة السر  
+                    </label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <!-- switch -->
+
+
+
+                <div class="form-style-agile ">
+                    <p>
+                        @Html.ActionLink("هل نسيت كلمة السر ؟", "ForgotPassword","",new { style = "color:white" })
+                    </p>
+                </div>
+
+                <!-- //switch -->
+
+                <div class="form-style-agile ">
+                    <input type="submit" value="Log in" class="btn btn-success" />
+                </div>
+                @* Enable this once you have account confirmation enabled for password reset functionality*@
+                <div class="form-style-agile ">
+                    <a class="btn btn-primary text-right" href="@Url.Action( "Register", "Account" )" style="text-align:right">
+                        إنشاء حساب جديد
+                    </a>
+                </div>
+
+            }
+
+        </form>
+
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

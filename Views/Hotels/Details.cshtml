@@ -1,0 +1,403 @@
+﻿@model tourism.Models.Hotel
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<h1 class="text-xl-center">
+    @Html.DisplayFor(model => model.H_Name)
+
+</h1>
+
+<div class="btn btn-light text-center">
+
+    @Html.ActionLink("صفحة الفنادق", "Index")
+</div>
+
+<!-- about page about section -->
+
+<section class="w3l-index3" id="about1">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6 mb-lg-0 mb-md-5 mb-4">
+
+                    @*<img class="radius-image-full img-fluid"
+                        src="~/Content/Image/For_Reser/@Url.Content(Model.H_Image)"
+                        height="300"
+                        alt="" />*@
+
+
+
+
+                    <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+                        <div class="row py-3 shadow-5">
+                            <div class="col-12 mb-1">
+                                <div class="lightbox">
+
+                                    @if (!string.IsNullOrWhiteSpace(Model.H_Image))
+                                    {
+
+                                        <img src="~/Content/Image/For_Reser/@Url.Content(Model.H_Image)"
+                                             alt="Gallery image 1"
+                                             class="ecommerce-gallery-main-img active w-100" />
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-3 mt-1">
+                                @if (!string.IsNullOrWhiteSpace(Model.H_Image2))
+                                {
+
+                                    <img src="~/Content/Image/For_Reser/@Url.Content(Model.H_Image2)"
+                                         data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+                                         alt="Gallery image 1"
+                                         class="active w-100" />
+                                }
+
+                            </div>
+                            <div class="col-3 mt-1">
+
+                                @if (!string.IsNullOrWhiteSpace(Model.H_Image3))
+                                {
+
+                                    <img src="~/Content/Image/For_Reser/@Url.Content(Model.H_Image3)"
+                                         data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+                                         alt="Gallery image 2"
+                                         class="w-100" />
+                                }
+
+                            </div>
+                            <div class="col-3 mt-1">
+
+                                @if (!string.IsNullOrWhiteSpace(Model.H_Image4))
+                                {
+
+                                    <img src="~/Content/Image/For_Reser/@Url.Content(Model.H_Image4)"
+                                         data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+                                         alt="Gallery image 3"
+                                         class="w-100" />
+
+                                }
+                            </div>
+                            <div class="col-3 mt-1">
+
+                                @if (!string.IsNullOrWhiteSpace(Model.H_Image5))
+                                {
+
+                                    <img src="~/Content/Image/For_Reser/@Url.Content(Model.H_Image5)"
+                                         data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+                                         alt="Gallery image 4"
+                                         class="w-100" />
+                                }
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="col-lg-6 pl-lg-5 ">
+                    <div class="header-title">
+                        <span class="sub-title">استمتع طول فترة اقامتك</span>
+                        <h3 class="hny-title text-center">معلومات الفندق</h3>
+                    </div>
+
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description)
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /bottom-grids-->
+
+
+
+
+
+<section class="w3l-index3" id="about1">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6 pl-lg-5 ">
+                    <div class="header-title">
+                        <span class="sub-title">امتيازات الفندق</span>
+                    </div>
+
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description1)
+                    </p>
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description2)
+                    </p>
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description3)
+                    </p>
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description4)
+                    </p>
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description5)
+                    </p>
+                    <p class="mt-3">
+                        @Html.DisplayFor(model => model.H_Description6)
+                    </p>
+                </div>
+
+
+
+                <div class="col-lg-6 mb-lg-0 mb-md-5 mb-4">
+
+
+
+
+                    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+
+                        <iframe src="@Html.DisplayFor(model => model.H_Location)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+                        
+                    </div>
+
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /bottom-grids-->
+
+
+
+
+<div class="card-body">
+
+
+    <!-- /feature-left-->
+
+    <div class="area-box"
+         style=" border: 1px outset #0c49e4; border-radius: 20px;padding:15px;width: auto; height: auto; background-color: #afafafc2;text-align:center">
+        <div class="row">
+            <div class="col-sm-2 text-center" style="text-align:center">
+                <div class="fa fa-wifi"></div>
+                <div>مجانا wi-fi</div>
+
+
+            </div>
+
+            <div class="col-sm-2 text-center" style="text-align:center">
+                <div class="fa fa-eye"> </div>
+                <div>إطلالة</div>
+            </div>
+            <div class="col-sm-2 text-center" style="text-align:center">
+                <span class="fa fa-bath"> </span>
+                <div>مسبح</div>
+            </div>
+            <div class="col-sm-2 text-center" style="text-align:center">
+                <span class="fa fa-cutlery"></span>
+                <div> مرافق للشواء</div>
+            </div>
+            <div class="col-sm-2 text-center" style="text-align:center">
+                <span class="fa fa-snowflake-o"> </span>
+                <div>تكييف</div>
+            </div>
+            <div class="col-sm-2 text-center" style="text-align:center">
+                <span class="fa fa-clock-o"> </span>
+                <div>مكتب استقبال على مدار 24 ساعة</div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+
+</div>
+
+<!--<div class="map-iframe text-right">-->
+@*<map name="workmap">
+        <area shape="rect"  alt="Computer" href="@Html.DisplayFor(model => model.H_Location)">
+
+    </map>*@
+
+
+@*@<iframe src="@Html.DisplayFor(model => model.H_Location)" width="50%" height="50%" frameborder="0" style="border: 0px;" allowfullscreen="">
+    </iframe>*@
+<!--</div>-->
+
+@*<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3454.013320609684!2d31.2305962!3d30.0364757!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd7f50b4221f71eb0!2z2YHZhtiv2YIg2YHZiNixINiz2YrYstmI2YYg2YbYp9mK2YQg2KjZhNin2LLYpyDYp9mE2YLYp9mH2LHZhw!5e0!3m2!1sar!2seg!4v1664894257628!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>*@
+
+
+
+
+
+
+
+<section class="w3l-bottom-grids-6 py-5" id="features">
+    <div class="container py-lg-5 py-md-4">
+
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            @foreach (var item in Model.Rooms)
+            {
+                <!-- /feature-left-->
+                <div class="col-md-6 grids-feature mt-4">
+                    <div class="area-box">
+                        <div class="row">
+                            <div class="col-sm-2 icon">
+                                <span class="fa fa-building-o"></span>
+
+                                @*@if (!string.IsNullOrWhiteSpace(item.R_Image1))
+                                    {
+                                        <img class="img-responsive radius-image img-fluid"
+                                             width="100" height="100"
+                                             src="~/Content/Image/For_Reser/@Url.Content(item.R_Image1)"
+                                             alt="Alternate" />
+                                    }*@
+                            </div>
+                            <div class="col-sm-10 area-box-info">
+                                <h4><a href="#" class="title-head" style="text-align:center"> @Html.DisplayFor(modelItem => item.R_Name)</a></h4>
+                                <br />
+                                <table class="table table-borderless" style="text-align:center">
+                                    <tr>
+                                        <th>
+                                            <p class="mt-3"> سعر الليلة</p>
+                                        </th>
+
+                                        <th>
+                                            <p class="mt-3"> تتسع </p>
+                                        </th>
+
+                                        <th>
+                                            <p class="mt-3"> عدد السرائر </p>
+                                        </th>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span><p class="fa fa-money"></p></span> <p class="mt-3">   @Html.DisplayFor(modelItem => item.R_Price)</p>
+                                        </td>
+
+                                        <td>
+                                            <span><p class="fa fa-users"></p></span> <p class="mt-3">@Html.DisplayFor(modelItem => item.R_Breadth)</p>
+                                        </td>
+
+                                        <td>
+                                            <span><p class="fa fa-bed"></p></span> <p class="mt-3"> @Html.DisplayFor(modelItem => item.R_Breadth)</p>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div style="text-align:center">
+                                    <a class="btn btn-primary btn-style mt-4" href="@Url.Action( "Create", "Bookings")">للحجز </a>
+
+                                    <a class="btn btn-primary btn-style mt-4" style="color:white" href="@Url.Action( "Details","Rooms", new { id = item.r_Id, style = "color: white" })"> التفاصيل</a>
+
+                                </div>
+
+
+
+                                @*<p class="mt-3">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet.</p>
+                                    <a class="btn btn-primary btn-style mt-4" href="about.html">Start today <span class="fa fa-chevron-right ml-2" aria-hidden="true"></span></a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+@*<div>
+
+        <dl class="dl-horizontal">
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.rating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.rating)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Performance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Performance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.H_Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.H_Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.H_Location)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.H_Location)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.H_Video)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.H_Video)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rate.Rating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rate.Rating)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

@@ -1,0 +1,120 @@
+﻿@model tourism.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+<head>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+</head>
+
+
+<div class="video-w3l" style="background-image: url('../../Content/Image/1.jpg');  ">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="sub-main-w3">
+
+        <form action="" method="post" class="text-xl-center">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-style-agile">
+                    <label style="font-size:40px">
+                        إنشاء حساب جديد
+                    </label>
+                </div>
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        اسم المستخدم
+                    </label>
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        البريد الالكتروني
+                    </label>
+
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        رقم التليفون
+                    </label>
+
+                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        كلمة السر
+                    </label>
+
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-style-agile">
+                    <label style="font-size:25px">
+                        تاكيد كلمة السر
+                    </label>
+
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-style-agile ">
+                    <input type="submit" class="btn btn-success" value="Register" />
+                </div>
+             
+            }
+
+        </form>
+
+
+    </div>
+
+    <br />
+    <br />
+  
+</div>
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

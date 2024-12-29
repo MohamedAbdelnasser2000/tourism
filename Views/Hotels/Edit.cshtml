@@ -1,0 +1,218 @@
+﻿@model tourism.Models.Hotel
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<h2 style="text-align:center">تعديل الفندق </h2>
+<br />
+<hr />
+<div style="margin-left:10%;margin-right:10%">
+
+
+    @using (Html.BeginForm("Edit", "Hotels", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div style="margin-left:50%;">
+
+
+            @Html.AntiForgeryToken()
+
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    اسم الفندق
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.H_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.H_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    رفع صورة الفندق
+                    <div class="col-md-10">
+                        <input id="H_Image" title="Upload images" type="file" name="file" />
+                        @Html.ValidationMessageFor(model => model.H_Image, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    2 رفع صورة الفندق
+                    <div class="col-md-10">
+                        <input id="H_Image2" title="Upload images" type="file" name="file2" />
+                        @Html.ValidationMessageFor(model => model.H_Image2, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    3 رفع صورة الفندق
+                    <div class="col-md-10">
+                        <input id="H_Image3" title="Upload images" type="file" name="file3" />
+                        @Html.ValidationMessageFor(model => model.H_Image3, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    4 رفع صورة الفندق
+                    <div class="col-md-10">
+                        <input id="H_Image4" title="Upload images" type="file" name="file4" />
+                        @Html.ValidationMessageFor(model => model.H_Image4, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    5 رفع صورة الفندق
+                    <div class="col-md-10">
+                        <input id="H_Image5" title="Upload images" type="file" name="file5" />
+                        @Html.ValidationMessageFor(model => model.H_Image5, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                @*<div class="form-group">
+            التقيم
+            <div class="col-md-10">
+                @Html.DropDownList( "R_Rating" ,new List<SelectListItem>
+           {
+
+                new SelectListItem{ Text="bad", Value="1"},
+                 new SelectListItem{ Text="fair", Value="2"},
+                  new SelectListItem{ Text="good", Value="3"},
+                   new SelectListItem{ Text="excellent", Value="4"},
+                    new SelectListItem{ Text="awesome", Value="5"},
+
+           } )
+                @Html.ValidationMessageFor(model => model.R_Rating, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+                <div class="form-group">
+                    التقيم
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.rating, "Select")
+                        @Html.ValidationMessageFor(model => model.rating, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    اسم المحافظة
+                    <div class="col-md-10">
+                        @Html.DropDownList("R_Id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.R_Id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    اضافة اداء الفندق
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Performance, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Performance, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description, 10, 40, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    1 اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description1, 20, 30, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description1, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    2 اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description2, 20, 30, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description2, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    3 اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description3, 20, 30, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description3, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    4 اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description4, 20, 30, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description4, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    5 اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description5, 20, 30, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description5, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    6 اضافة وصف للفندق
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.H_Description6, 20, 30, htmlAttributes: new { style = "width:100%; max-width:100%" })
+                        @Html.ValidationMessageFor(model => model.H_Description6, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-group">
+                    اضافة موقع للفندق
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.H_Location, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.H_Location, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    رفع فديو للفندق
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.H_Video, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.H_Video, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="إنشاء" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    }
+
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

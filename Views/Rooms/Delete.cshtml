@@ -1,0 +1,120 @@
+﻿@model tourism.Models.Room
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Image1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Image1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Image2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Image2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Image3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Image3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Image4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Image4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Image5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Image5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Image6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Image6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number_Of_Beds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number_Of_Beds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Breadth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Breadth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotel.H_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel.H_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

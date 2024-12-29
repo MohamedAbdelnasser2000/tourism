@@ -1,0 +1,99 @@
+﻿@model IEnumerable<tourism.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            اسم العميل
+        </th>
+        <th>
+            البريد الالكتروني
+        </th>
+        <th>
+            رقم التليفون
+        </th>
+        <th>
+            صورة جواز السفر
+        </th>
+        <th>
+            تاريخ الوصول
+        </th>
+        <th>
+            تاريخ المغادرة
+        </th>
+        <th>
+            اسم الفندق
+        </th>
+        <th>
+            نوع الغرفة
+        </th>
+        <th>
+            الاستفسار
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(item.Passport))
+                {
+                    <img class="img-responsive radius-image img-fluid"
+                         width="75" height="75"
+                         src="~/Content/Image/For_Reser/@Url.Content(item.Passport)"
+                         alt="Alternate" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel.H_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.R_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Any_Question)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.B_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.B_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.B_Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<br />

@@ -1,0 +1,90 @@
+﻿@model tourism.Models.Booking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.A_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.A_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.D_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.D_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Any_Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Any_Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room.R_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.R_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotel.H_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel.H_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.B_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,157 @@
+﻿@model IEnumerable<tourism.Models.Hotel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<br />
+
+<div class="title-heading-w3 text-center mx-auto mb-5 pb-sm-4">
+
+    <h1 class="title-main title-big text-xl-center" style="font:bold">  الفنادق السياحية</h1>
+
+</div>
+
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="btn btn-style btn-light mt-sm-3" href="about.html" style="color:white;text-align:center">
+        @Html.ActionLink("إضافة دورات جديدة", "Create")<i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>
+    </div>
+}
+    <!--/courses-->
+    <section class="w3l-blogpost-content w3l-courses py-5">
+        <div class="container py-md-5">
+
+
+
+            <div class="row">
+
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="card">
+                            <div class="card-header p-0 position-relative">
+
+                                <a href="#">
+                                    @if (!string.IsNullOrWhiteSpace(item.H_Image))
+                                    {
+                                        <img class="card-img-bottom d-block radius-image-full"
+                                             src="~/Content/Image/For_Reser/@Url.Content(item.H_Image)"
+                                             height="300"
+                                             alt="Card image cap" />
+                                    }
+
+                                </a>
+                            </div>
+                            <div class="card-body blog-details" style="text-align:center">
+                                <a href="#" class="blog-desc mt-2">
+                                    <span class="fa fa-building"></span>   @Html.DisplayFor(modelItem => item.H_Name)
+                                </a>
+                                <br />
+
+
+
+                                <p>
+                                    @Html.DisplayFor(modelItem => item.Performance)
+                                </p>
+
+
+                                @for (int i = 0; i < (int)item.rating; i++)
+                                {
+                                    <img src="~/Content/assets/images/19173807891555590645-128.png" width="20" height="20" />
+
+                                }
+                                <br />
+                                <br />
+                                <div class="course-meta ">
+
+
+                                    <a class="grid-link btn btn-primary " href="@Url.Action( "Details", new { id = item.Id, style = "color:white" })">
+                                        التفاصيل
+                                    </a>
+
+                                </div>
+
+                                <br />
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <div class="grid-link btn btn-info">
+
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                    </div>
+                                }
+                                </div>
+                        </div>
+                        <br />
+                    </div>
+
+                    <br />
+                }
+            </div>
+        </div>
+    </section>
+    <!--//courses-->
+    @*<table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.H_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.H_Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Performance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rate.Rating)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.H_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.H_Image)
+                    </td>
+                    <td>
+                        @for (int i = 0; i < (int)item.rating; i++)
+                                {
+                                    <img src="~/Content/assets/images/19173807891555590645-128.png" width="20" height="20" />
+
+                                }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Performance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rate.Rating)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>*@
